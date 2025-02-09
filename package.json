@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/index.tsx",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-pdf/renderer": "^4.2.1",
+    "h3": "^1.15.0",
+    "pathe": "^2.0.2",
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.1.1",
+    "@types/node": "^22.13.1",
+    "@types/react": "^19.0.8",
+    "eslint": "^9.19.0",
+    "tsx": "^4.19.2"
+  }
+}
