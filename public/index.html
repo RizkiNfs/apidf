@@ -7,8 +7,55 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>apidf</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
+    <script type="module">
+      import { createApp } from 'https://unpkg.com/petite-vue?module'
+      createApp({
+        templates: [],
+        getTemplates() {
+          fetch('/api/templates')
+            .then((res) => res.json())
+            .then((data) => {
+              this.templates = data
+            })
+        },
+      }).mount()
+    </script>
+    <style>
+      [un-cloak] {
+        display: none;
+      }
+    </style>
   </head>
-  <body>
-    <h1>WIP</h1>
+  <body un-cloak>
+    <div class="max-w-lg mx-auto px-2 py-12">
+      <h1 class="pb-6 text-2xl font-semiblod text-center">Templates</h1>
+      <div v-scope>
+        <ul 
+          @vue:mounted="getTemplates()"
+          class="flex flex-col gap-6"
+        >
+          <li
+            v-for="template in templates" 
+            :key="template.id"
+            class="rounded-xl border shadow-sm" 
+          >
+            <a 
+              :href="`/template.html?id=${template.id}`"
+            >
+              <div class="h-[220px] bg-neutral-400 rounded-t-xl" >
+                <img v-if="template.thumbnail" :src="template.thumbnail" alt="thumbnail" />
+              </div>
+              <div class="p-5">
+                <p class="font-semibold text-lg">{{ template.name }}</p>
+                <p class="text-neutral-500">{{ template.description }}</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+  
+      </div>
+    </div>
   </body>
 </html>

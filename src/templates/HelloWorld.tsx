@@ -14,6 +14,8 @@ const Component: React.FC = () => {
 }
 
 const template: Template = {
+  id: 'hello-world',
+  name: 'HelloWorld',
   Component,
 }
 
