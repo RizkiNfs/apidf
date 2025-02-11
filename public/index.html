@@ -45,7 +45,14 @@
               :href="`/template.html?id=${template.id}`"
             >
               <div class="h-[220px] bg-neutral-400 rounded-t-xl" >
-                <img v-if="template.thumbnail" :src="template.thumbnail" alt="thumbnail" />
+                <img 
+                  v-if="template.thumbnail" 
+                  :src="template.thumbnail"
+                  class="object-cover object-top w-full h-full rounded-t-xl border-b" 
+                  alt="thumbnail" 
+                  width="500"
+                  height="220"
+                />
               </div>
               <div class="p-5">
                 <p class="font-semibold text-lg">{{ template.name }}</p>
