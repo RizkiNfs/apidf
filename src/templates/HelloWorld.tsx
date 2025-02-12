@@ -1,6 +1,6 @@
 import type { Template } from './utils'
 import { Document, Page, Text } from '@react-pdf/renderer'
-import React from 'react'
+import { createElement as h } from 'react'
 
 const Component: React.FC = () => {
   return (

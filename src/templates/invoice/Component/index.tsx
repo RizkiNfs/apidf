@@ -1,19 +1,19 @@
 import type { Props } from '..'
-import process from 'node:process'
 import { Document, Font, Page, StyleSheet, Text, View } from '@react-pdf/renderer'
-import React from 'react'
+import { createElement as h } from 'react'
+import process from 'node:process'
 
 Font.register({
   family: 'Inter',
   fonts: [
-    { src: `${process.cwd()}/src/fonts/inter/inter-400.ttf`, fontStyle: 'normal', fontWeight: 400 },
-    { src: `${process.cwd()}/src/fonts/inter/inter-600.ttf`, fontStyle: 'normal', fontWeight: 600 },
+    { src: `${process.env.ORIGIN}/fonts/inter/inter-400.ttf`, fontStyle: 'normal', fontWeight: 400 },
+    { src: `${process.env.ORIGIN}/fonts/inter/inter-600.ttf`, fontStyle: 'normal', fontWeight: 600 },
   ],
 })
 Font.register({
   family: 'Great Vibes',
   fonts: [
-    { src: `${process.cwd()}/src/fonts/great-vibes/great-vibes-400.ttf`, fontStyle: 'normal', fontWeight: 400 },
+    { src: `${process.env.ORIGIN}/fonts/great-vibes/great-vibes-400.ttf`, fontStyle: 'normal', fontWeight: 400 },
   ],
 })
 
@@ -113,7 +113,6 @@ export const Component: React.FC<Props> = ({ data }) => {
           </View>
           {data?.items.map((item, index) => (
             <View
-              key={index}
               style={{ paddingHorizontal: 6, flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 12, fontSize: 11, backgroundColor: index % 2 === 0 ? '#F7F3E9' : 'transparent' }}
             >
               <Text style={styles.itemColumn}>{item.name}</Text>
