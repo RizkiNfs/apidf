@@ -1,21 +1,6 @@
 import type { Props } from '..'
-import { Document, Font, Page, StyleSheet, Text, View } from '@react-pdf/renderer'
+import { Document, Page, StyleSheet, Text, View } from '@react-pdf/renderer'
 import { createElement as h } from 'react'
-import process from 'node:process'
-
-Font.register({
-  family: 'Inter',
-  fonts: [
-    { src: `${process.env.ORIGIN}/fonts/inter/inter-400.ttf`, fontStyle: 'normal', fontWeight: 400 },
-    { src: `${process.env.ORIGIN}/fonts/inter/inter-600.ttf`, fontStyle: 'normal', fontWeight: 600 },
-  ],
-})
-Font.register({
-  family: 'Great Vibes',
-  fonts: [
-    { src: `${process.env.ORIGIN}/fonts/great-vibes/great-vibes-400.ttf`, fontStyle: 'normal', fontWeight: 400 },
-  ],
-})
 
 const styles = StyleSheet.create({
   page: {

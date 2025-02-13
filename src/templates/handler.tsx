@@ -1,6 +1,37 @@
-import { renderToStream } from '@react-pdf/renderer'
+import process from 'node:process'
+import { Font, renderToStream } from '@react-pdf/renderer'
 import { createElement as h } from 'react'
 import templatesMap from './index'
+
+Font.register({
+  family: 'Inter',
+  fonts: [
+    { src: `${process.env.ORIGIN}/fonts/inter/inter-400.ttf`, fontStyle: 'normal', fontWeight: 400 },
+    { src: `${process.env.ORIGIN}/fonts/inter/inter-600.ttf`, fontStyle: 'normal', fontWeight: 600 },
+  ],
+})
+
+Font.register({
+  family: 'Great Vibes',
+  fonts: [
+    { src: `${process.env.ORIGIN}/fonts/great-vibes/great-vibes-400.ttf`, fontStyle: 'normal', fontWeight: 400 },
+  ],
+})
+
+Font.register({
+  family: 'Shrikhand',
+  fonts: [
+    { src: `${process.env.ORIGIN}/fonts/shrikhand/shrikhand-400.ttf`, fontStyle: 'normal', fontWeight: 400 },
+  ],
+})
+
+Font.register({
+  family: 'Nunito Sans',
+  fonts: [
+    { src: `${process.env.ORIGIN}/fonts/nunito/nunito-sans-400.ttf`, fontStyle: 'normal', fontWeight: 400 },
+    { src: `${process.env.ORIGIN}/fonts/nunito/nunito-sans-800.ttf`, fontStyle: 'normal', fontWeight: 800 },
+  ],
+})
 
 export default defineEventHandler(async (event) => {
   const id = event.path.split('/').pop()
