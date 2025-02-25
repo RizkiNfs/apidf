@@ -4,6 +4,7 @@ export default defineNitroConfig({
     'hello-world',
     'invoice',
     'event-ticket',
+    'certificate',
   ].map((template) => {
     return {
       route: `/api/pdf/${template}`,
