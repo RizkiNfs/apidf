@@ -33,6 +33,13 @@ Font.register({
   ],
 })
 
+Font.register({
+  family: 'Cutive Mono',
+  fonts: [
+    { src: `${process.env.ORIGIN}/fonts/cutive/cutive-mono-400.ttf`, fontStyle: 'normal', fontWeight: 400 },
+  ],
+})
+
 export default defineEventHandler(async (event) => {
   const id = event.path.split('/').pop()
   const template = templatesMap.get(id)
