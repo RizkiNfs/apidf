@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
     <script type="module">
-      import { createApp } from 'https://unpkg.com/petite-vue?module'
+      import { createApp } from 'https://cdn.jsdelivr.net/npm/petite-vue/+esm'
       createApp({
         template: {},
         exampleData: '',
@@ -44,15 +44,15 @@
     </style>
   </head>
   <body class="px-6 py-8 flex gap-4 h-full" un-cloak>
-    <a 
+    <a
       aria-label="Back"
       class="bg-neutral-200 hover:bg-neutral-300 rounded h-8 w-8 block text-center text-xl font-bold" href="/">
       <img aria-hidden src="/icon/chevron-left.png" height="30" width="30" />
     </a>
-    <div 
-      v-scope 
+    <div
+      v-scope
       @vue:mounted="getTemplate()"
-      class="flex-1 flex flex-col md:flex-row gap-4" 
+      class="flex-1 flex flex-col md:flex-row gap-4"
     >
       <div class="md:min-w-[400px]">
         <h1 class="text-xl font-semibold">{{template.name}}</h1>
@@ -61,8 +61,8 @@
           <div class="flex items-center mb-2 gap-3">
             <p class="py-1 px-2 rounded bg-green-700 text-white text-lg font-semibold">POST</p>
             <p class="flex-1 border rounded-lg px-2 py-1">{{`${location.origin}/api/pdf/${template.id}`}}</p>
-            <button 
-              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 rounded text-lg font-semibold" 
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 rounded text-lg font-semibold"
               @click="generatePdf"
             >
               Generate

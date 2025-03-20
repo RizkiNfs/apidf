@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
     <script type="module">
-      import { createApp } from 'https://unpkg.com/petite-vue?module'
+      import { createApp } from 'https://cdn.jsdelivr.net/npm/petite-vue/+esm'
       createApp({
         templates: [],
         getTemplates() {
@@ -32,24 +32,24 @@
     <div class="max-w-lg mx-auto px-2 py-12">
       <h1 class="pb-6 text-2xl font-semiblod text-center">Templates</h1>
       <div v-scope>
-        <ul 
+        <ul
           @vue:mounted="getTemplates()"
           class="flex flex-col gap-6"
         >
           <li
-            v-for="template in templates" 
+            v-for="template in templates"
             :key="template.id"
-            class="rounded-xl border shadow-sm" 
+            class="rounded-xl border shadow-sm"
           >
-            <a 
+            <a
               :href="`/template.html?id=${template.id}`"
             >
               <div class="h-[220px] bg-neutral-400 rounded-t-xl" >
-                <img 
-                  v-if="template.thumbnail" 
+                <img
+                  v-if="template.thumbnail"
                   :src="template.thumbnail"
-                  class="object-cover object-top w-full h-full rounded-t-xl border-b" 
-                  alt="thumbnail" 
+                  class="object-cover object-top w-full h-full rounded-t-xl border-b"
+                  alt="thumbnail"
                   width="500"
                   height="220"
                 />
@@ -61,7 +61,7 @@
             </a>
           </li>
         </ul>
-  
+
       </div>
     </div>
   </body>
